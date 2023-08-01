@@ -14,6 +14,10 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+export interface SearchBarProps {
+  setManufacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
+}
 
 export interface FilterProps {
   manufacturer?: string;
@@ -47,22 +51,24 @@ export interface CustomButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
+
+
+export interface CustomFilterProps {
+  setFilter: (selected: string) => void;
+  options: OptionProps[];
+}
 export interface OptionProps {
   title: string;
   value: string;
 }
 
-export interface CustomFilterProps {
-  title: string;
-  options: OptionProps[];
-}
-
 export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
+  setLimit: (limit: number) => void;
 }
 
-export interface SearchManuFacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
+export interface SearchManufacturerProps {
+  selected: string;
+  setSelected: (selected: string) => void;
 }
